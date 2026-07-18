@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------
+   Design tokens — Elegant Indonesian wedding: ivory / onyx / gold
+   --------------------------------------------------------- */
+@theme {
+  /* Core palette */
+  --color-ivory: #faf7f0;       /* primary background */
+  --color-sand: #f0e6d2;        /* alternate section background */
+  --color-onyx: #1c1917;        /* dark sections / primary ink */
+  --color-onyx-soft: #2b2620;   /* secondary ink, softer than onyx */
+  --color-gold: #b8935a;        /* primary gold accent */
+  --color-gold-light: #d9bc8c;  /* highlight / hover gold */
+  --color-gold-deep: #8f6f40;   /* pressed / shadow gold */
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-body: "Jost", sans-serif;
+
+  /* Motion */
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-onyx-soft);
+    font-family: var(--font-body);
+    font-weight: 300;
+  }
+
+  /* Smoother section-to-section rhythm: every top-level section fades
+     its own background edge into the next rather than a hard cut. */
+  section {
+    position: relative;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-light);
+    color: var(--color-onyx);
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  /* Thin gold divider with a center ornament, reused between sections */
+  .divider-gold {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-gold);
+  }
+  .divider-gold::before,
+  .divider-gold::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  }
+
+  /* Scroll-reveal system — elements start hidden/offset, and get the
+     .is-visible class from the IntersectionObserver in ScrollReveal.astro */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s var(--ease-elegant), transform 0.9s var(--ease-elegant);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  [data-reveal="fade"] {
+    transform: none;
+  }
+  [data-reveal="left"] {
+    transform: translateX(-32px);
+  }
+  [data-reveal="right"] {
+    transform: translateX(32px);
+  }
+  [data-reveal="scale"] {
+    transform: scale(0.94);
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}

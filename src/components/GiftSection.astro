@@ -1,0 +1,69 @@
+---
+import { wedding } from "../data/wedding.config";
+import GoldOrnament from "./GoldOrnament.astro";
+
+const { gifts } = wedding;
+---
+
+<section class="bg-ivory px-6 py-24">
+  <div class="mx-auto max-w-md text-center">
+    <p data-reveal="fade" class="font-display text-xs tracking-[0.35em] text-gold uppercase">Wedding Gift</p>
+    <div data-reveal="fade" class="divider-gold mx-auto mt-4 w-40">
+      <GoldOrnament variant="mark" class="h-3 w-12 shrink-0 text-gold" />
+    </div>
+    <p data-reveal="fade" class="mt-6 text-sm leading-relaxed text-onyx-soft/70">{gifts.intro}</p>
+
+    <div data-reveal-group class="mt-10 space-y-10">
+      {gifts.accounts.map((account) => (
+        <div data-reveal="scale" class="flex flex-col items-center">
+          <!-- Card visual -->
+          <div class="w-full max-w-sm overflow-hidden rounded-2xl shadow-xl shadow-onyx/20 ring-1 ring-gold/30 transition-transform duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <img
+              src={account.cardImage}
+              alt={`Kartu ${account.bankName} a.n. ${account.accountHolder}`}
+              class="w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Details + copy -->
+          <div class="mt-4 flex w-full max-w-sm items-center justify-between border border-gold/40 px-5 py-4 text-left">
+            <div>
+              <p class="text-xs tracking-[0.2em] text-gold-deep uppercase">{account.bankName}</p>
+              <p class="font-display mt-1 text-base text-onyx">{account.accountNumber}</p>
+              <p class="text-xs text-onyx-soft/60">a.n. {account.accountHolder}</p>
+            </div>
+            <button
+              type="button"
+              data-copy={account.accountNumber}
+              class="copy-btn shrink-0 border border-gold px-3 py-2 text-[10px] tracking-[0.2em] text-gold-deep uppercase transition-colors hover:bg-gold hover:text-ivory"
+            >
+              Salin
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {gifts.address.show && (
+      <div data-reveal="fade" class="mt-12 border-t border-gold/20 pt-8 text-sm text-onyx-soft/70">
+        <p class="text-xs tracking-[0.2em] text-gold-deep uppercase">Kirim Kado</p>
+        <p class="font-display mt-2 text-onyx">{gifts.address.recipientName}</p>
+        <p class="mt-1">{gifts.address.fullAddress}</p>
+      </div>
+    )}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const value = btn.dataset.copy;
+      if (!value) return;
+      await navigator.clipboard.writeText(value);
+      const original = btn.textContent;
+      btn.textContent = "Tersalin";
+      setTimeout(() => (btn.textContent = original), 1500);
+    });
+  });
+</script>

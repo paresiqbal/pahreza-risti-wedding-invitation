@@ -1,0 +1,20 @@
+---
+import { wedding } from "../data/wedding.config";
+import GoldOrnament from "./GoldOrnament.astro";
+
+const { groom, bride } = wedding;
+---
+
+<footer class="relative flex flex-col items-center bg-onyx px-6 py-20 text-center text-ivory">
+  <div data-reveal="fade">
+    <GoldOrnament variant="mark" class="h-4 w-16 text-gold" />
+  </div>
+  <p data-reveal="fade" style="--reveal-delay: 100ms" class="font-display mt-8 max-w-md text-sm leading-relaxed text-ivory/70">
+    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i
+    berkenan hadir dan memberikan doa restu.
+  </p>
+  <h2 data-reveal="scale" style="--reveal-delay: 200ms" class="font-script mt-8 text-4xl text-gold">
+    {groom.nickname} &amp; {bride.nickname}
+  </h2>
+  <p data-reveal="fade" style="--reveal-delay: 300ms" class="mt-6 text-xs tracking-[0.3em] text-ivory/40 uppercase">Kami yang berbahagia</p>
+</footer>

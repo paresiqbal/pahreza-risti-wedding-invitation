@@ -1,0 +1,37 @@
+---
+import { wedding } from "../data/wedding.config";
+import GoldOrnament from "./GoldOrnament.astro";
+
+const { groom, bride } = wedding;
+---
+
+<section class="bg-ivory px-6 py-24">
+  <div class="mx-auto max-w-4xl text-center">
+    <p data-reveal="fade" class="font-display text-xs tracking-[0.35em] text-gold uppercase">Mempelai</p>
+    <div data-reveal="fade" class="divider-gold mx-auto mt-4 w-40">
+      <GoldOrnament variant="mark" class="h-3 w-12 shrink-0 text-gold" />
+    </div>
+
+    <div data-reveal-group class="mt-16 grid grid-cols-1 gap-16 sm:grid-cols-2">
+      <!-- Groom -->
+      <div data-reveal="left" class="flex flex-col items-center">
+        <div class="h-40 w-40 overflow-hidden rounded-full border border-gold/60 bg-sand">
+          <img src={groom.photo} alt={groom.fullName} class="h-full w-full object-cover" loading="lazy" />
+        </div>
+        <h2 class="font-display mt-6 text-2xl text-onyx">{groom.fullName}</h2>
+        <p class="mt-2 max-w-xs text-sm leading-relaxed text-onyx-soft/70">{groom.parents}</p>
+        <p class="mt-2 text-xs tracking-widest text-gold-deep uppercase">{groom.instagram}</p>
+      </div>
+
+      <!-- Bride -->
+      <div data-reveal="right" class="flex flex-col items-center">
+        <div class="h-40 w-40 overflow-hidden rounded-full border border-gold/60 bg-sand">
+          <img src={bride.photo} alt={bride.fullName} class="h-full w-full object-cover" loading="lazy" />
+        </div>
+        <h2 class="font-display mt-6 text-2xl text-onyx">{bride.fullName}</h2>
+        <p class="mt-2 max-w-xs text-sm leading-relaxed text-onyx-soft/70">{bride.parents}</p>
+        <p class="mt-2 text-xs tracking-widest text-gold-deep uppercase">{bride.instagram}</p>
+      </div>
+    </div>
+  </div>
+</section>

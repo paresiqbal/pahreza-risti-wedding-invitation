@@ -1,0 +1,104 @@
+---
+import { wedding } from "../data/wedding.config";
+import GoldOrnament from "./GoldOrnament.astro";
+---
+
+<section class="bg-sand px-6 py-24">
+  <div class="mx-auto max-w-md text-center">
+    <p data-reveal="fade" class="font-display text-xs tracking-[0.35em] text-gold uppercase">RSVP</p>
+    <div data-reveal="fade" class="divider-gold mx-auto mt-4 w-40">
+      <GoldOrnament variant="mark" class="h-3 w-12 shrink-0 text-gold" />
+    </div>
+    <p class="mt-6 text-sm leading-relaxed text-onyx-soft/70">
+      Mohon konfirmasi kehadiran Anda sebelum tanggal acara agar kami dapat mempersiapkan yang terbaik.
+    </p>
+
+    <form
+      id="rsvp-form"
+      data-endpoint={wedding.rsvp.formEndpoint}
+      class="mt-10 space-y-5 text-left"
+    >
+      <div>
+        <label for="name" class="text-xs tracking-[0.2em] text-onyx-soft/60 uppercase">Nama</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          class="mt-2 w-full border border-gold/40 bg-ivory px-4 py-3 text-sm text-onyx-soft outline-none focus:border-gold"
+          placeholder="Nama Anda"
+        />
+      </div>
+
+      <div>
+        <label for="attendance" class="text-xs tracking-[0.2em] text-onyx-soft/60 uppercase">Kehadiran</label>
+        <select
+          id="attendance"
+          name="attendance"
+          class="mt-2 w-full border border-gold/40 bg-ivory px-4 py-3 text-sm text-onyx-soft outline-none focus:border-gold"
+        >
+          <option value="hadir">Hadir</option>
+          <option value="tidak_hadir">Tidak Hadir</option>
+          <option value="ragu">Masih Ragu</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="guests" class="text-xs tracking-[0.2em] text-onyx-soft/60 uppercase">Jumlah Tamu</label>
+        <input
+          id="guests"
+          name="guests"
+          type="number"
+          min="1"
+          max="5"
+          value="1"
+          class="mt-2 w-full border border-gold/40 bg-ivory px-4 py-3 text-sm text-onyx-soft outline-none focus:border-gold"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="text-xs tracking-[0.2em] text-onyx-soft/60 uppercase">Ucapan &amp; Doa</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="3"
+          class="mt-2 w-full border border-gold/40 bg-ivory px-4 py-3 text-sm text-onyx-soft outline-none focus:border-gold"
+          placeholder="Tuliskan ucapan dan doa terbaik Anda"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full border border-gold bg-gold px-6 py-3 text-xs tracking-[0.3em] text-ivory uppercase transition-colors hover:bg-gold-deep"
+      >
+        Kirim
+      </button>
+
+      <p id="rsvp-status" class="text-center text-xs text-onyx-soft/60"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("rsvp-form") as HTMLFormElement | null;
+  const status = document.getElementById("rsvp-status");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const endpoint = form.dataset.endpoint;
+
+    if (!endpoint) {
+      if (status) status.textContent = "Formulir belum terhubung ke penyimpanan data — sambungkan formEndpoint di wedding.config.ts.";
+      return;
+    }
+
+    try {
+      const data = new FormData(form);
+      await fetch(endpoint, { method: "POST", body: data });
+      if (status) status.textContent = "Terima kasih! Konfirmasi Anda telah terkirim.";
+      form.reset();
+    } catch {
+      if (status) status.textContent = "Terjadi kesalahan, silakan coba lagi.";
+    }
+  });
+</script>
