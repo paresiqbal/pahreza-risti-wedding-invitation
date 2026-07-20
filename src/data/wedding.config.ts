@@ -7,6 +7,7 @@
 import groomPhoto from "../assets/paheza.jpeg";
 import bridePhoto from "../assets/risti.jpeg";
 import atmCard from "../assets/atm.png";
+import songAudio from "../assets/The way you look at me - Christian Bautista (Lyrics)_320k.mp3";
 import gallery1 from "../assets/1.jpeg";
 import gallery2 from "../assets/2.jpeg";
 import gallery3 from "../assets/3.jpeg";
@@ -151,7 +152,7 @@ export const wedding = {
   },
 
   music: {
-    src: "/audio/wedding-theme.mp3",
-    title: "A Thousand Years — Christina Perri",
+    src: songAudio,
+    title: "Song",
   },
 } as const;

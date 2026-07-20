@@ -1,23 +1,8 @@
 ---
 import { wedding } from "../data/wedding.config";
 
-function parseDate(input: string) {
-  if (/^\d{2}-\d{2}-\d{4}$/.test(input)) {
-    const [day, month, year] = input.split("-").map(Number);
-    return new Date(year, month - 1, day);
-  }
-
-  if (/^\d{4}-\d{2}-\d{2}$/.test(input)) {
-    const [year, month, day] = input.split("-").map(Number);
-    return new Date(year, month - 1, day);
-  }
-
-  return new Date(input);
-}
-
-const firstEvent = wedding.events[0];
-const targetDate = parseDate(firstEvent.date);
-const targetISO = `${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, "0")}-${String(targetDate.getDate()).padStart(2, "0")}T${firstEvent.startTime}:00`;
+const targetDate = new Date(2026, 7, 2, 8, 0, 0);
+const targetISO = `${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, "0")}-${String(targetDate.getDate()).padStart(2, "0")}T${String(targetDate.getHours()).padStart(2, "0")}:${String(targetDate.getMinutes()).padStart(2, "0")}`;
 ---
 
 <section class="bg-onyx px-6 py-20 text-center text-ivory">

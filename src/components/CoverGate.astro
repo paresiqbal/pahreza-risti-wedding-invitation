@@ -10,12 +10,26 @@ const { groom, bride } = wedding;
   class="fixed inset-0 z-50 flex flex-col items-center justify-between overflow-hidden bg-onyx px-6 py-12 text-ivory transition-opacity duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
 >
   <!-- corner ornaments -->
-  <GoldOrnament variant="corner" class="absolute top-4 left-4 h-16 w-16 text-gold" />
-  <GoldOrnament variant="corner" class="absolute top-4 right-4 h-16 w-16 rotate-90 text-gold" />
-  <GoldOrnament variant="corner" class="absolute bottom-4 left-4 h-16 w-16 -rotate-90 text-gold" />
-  <GoldOrnament variant="corner" class="absolute bottom-4 right-4 h-16 w-16 rotate-180 text-gold" />
+  <GoldOrnament
+    variant="corner"
+    class="absolute top-4 left-4 h-16 w-16 text-gold"
+  />
+  <GoldOrnament
+    variant="corner"
+    class="absolute top-4 right-4 h-16 w-16 rotate-90 text-gold"
+  />
+  <GoldOrnament
+    variant="corner"
+    class="absolute bottom-4 left-4 h-16 w-16 -rotate-90 text-gold"
+  />
+  <GoldOrnament
+    variant="corner"
+    class="absolute bottom-4 right-4 h-16 w-16 rotate-180 text-gold"
+  />
 
-  <p class="font-display mt-10 text-xs tracking-[0.35em] text-gold-light uppercase">
+  <p
+    class="font-display mt-10 text-xs tracking-[0.35em] text-gold-light uppercase"
+  >
     The Wedding Of
   </p>
 
@@ -29,8 +43,12 @@ const { groom, bride } = wedding;
     </div>
 
     <div class="mt-8 space-y-1">
-      <p class="font-body text-xs tracking-[0.2em] text-ivory/60 uppercase">Kepada Yth. Bapak/Ibu/Saudara/i</p>
-      <p id="guest-name" class="font-display text-2xl text-ivory">Tamu Undangan</p>
+      <p class="font-body text-xs tracking-[0.2em] text-ivory/60 uppercase">
+        Kepada Yth. Bapak/Ibu/Saudara/i
+      </p>
+      <p id="guest-name" class="font-display text-2xl text-ivory">
+        Tamu Undangan
+      </p>
     </div>
   </div>
 
@@ -40,7 +58,9 @@ const { groom, bride } = wedding;
     class="group mb-6 flex items-center gap-3 border border-gold px-8 py-3 font-body text-xs tracking-[0.3em] text-gold uppercase transition-colors duration-300 hover:bg-gold hover:text-onyx"
   >
     <span>Buka Undangan</span>
-    <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+    <span class="transition-transform duration-300 group-hover:translate-x-1"
+      >→</span
+    >
   </button>
 </div>
 
@@ -66,9 +86,14 @@ const { groom, bride } = wedding;
     setTimeout(() => gate?.remove(), 700);
 
     // Optional: start background music on first user gesture.
-    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
-    audio?.play().catch(() => {
-      /* autoplay can still be blocked by the browser; ignore silently */
-    });
+    const audio = document.getElementById(
+      "wedding-audio",
+    ) as HTMLAudioElement | null;
+    if (audio) {
+      audio.load();
+      audio.play().catch(() => {
+        /* autoplay can still be blocked by the browser; ignore silently */
+      });
+    }
   });
 </script>
