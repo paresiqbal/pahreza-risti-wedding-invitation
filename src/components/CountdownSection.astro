@@ -1,12 +1,32 @@
 ---
 import { wedding } from "../data/wedding.config";
 
+function parseDate(input: string) {
+  if (/^\d{2}-\d{2}-\d{4}$/.test(input)) {
+    const [day, month, year] = input.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(input)) {
+    const [year, month, day] = input.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  }
+
+  return new Date(input);
+}
+
 const firstEvent = wedding.events[0];
-const targetISO = `${firstEvent.date}T${firstEvent.startTime}:00`;
+const targetDate = parseDate(firstEvent.date);
+const targetISO = `${targetDate.getFullYear()}-${String(targetDate.getMonth() + 1).padStart(2, "0")}-${String(targetDate.getDate()).padStart(2, "0")}T${firstEvent.startTime}:00`;
 ---
 
 <section class="bg-onyx px-6 py-20 text-center text-ivory">
-  <p data-reveal="fade" class="font-display text-xs tracking-[0.35em] text-gold-light uppercase">Menuju Hari Bahagia</p>
+  <p
+    data-reveal="fade"
+    class="font-display text-xs tracking-[0.35em] text-gold-light uppercase"
+  >
+    Menuju Hari Bahagia
+  </p>
 
   <div
     id="countdown"
@@ -14,14 +34,30 @@ const targetISO = `${firstEvent.date}T${firstEvent.startTime}:00`;
     data-reveal-group
     class="mx-auto mt-8 grid max-w-lg grid-cols-4 gap-3 sm:gap-6"
   >
-    {["days", "hours", "minutes", "seconds"].map((unit) => (
-      <div data-reveal="scale" class="flex flex-col items-center border border-gold/30 px-2 py-4 sm:px-4">
-        <span data-unit={unit} class="font-display text-3xl text-gold sm:text-4xl">00</span>
-        <span class="mt-2 text-[10px] tracking-[0.2em] text-ivory/50 uppercase sm:text-xs">
-          {unit === "days" ? "Hari" : unit === "hours" ? "Jam" : unit === "minutes" ? "Menit" : "Detik"}
-        </span>
-      </div>
-    ))}
+    {
+      ["days", "hours", "minutes", "seconds"].map((unit) => (
+        <div
+          data-reveal="scale"
+          class="flex flex-col items-center border border-gold/30 px-2 py-4 sm:px-4"
+        >
+          <span
+            data-unit={unit}
+            class="font-display text-3xl text-gold sm:text-4xl"
+          >
+            00
+          </span>
+          <span class="mt-2 text-[10px] tracking-[0.2em] text-ivory/50 uppercase sm:text-xs">
+            {unit === "days"
+              ? "Hari"
+              : unit === "hours"
+                ? "Jam"
+                : unit === "minutes"
+                  ? "Menit"
+                  : "Detik"}
+          </span>
+        </div>
+      ))
+    }
   </div>
 </section>
 
@@ -29,7 +65,9 @@ const targetISO = `${firstEvent.date}T${firstEvent.startTime}:00`;
   function initCountdown() {
     const el = document.getElementById("countdown");
     if (!el) return;
+
     const target = new Date(el.dataset.target ?? "").getTime();
+    if (Number.isNaN(target)) return;
 
     const tick = () => {
       const now = Date.now();
@@ -42,8 +80,8 @@ const targetISO = `${firstEvent.date}T${firstEvent.startTime}:00`;
 
       const values: Record<string, number> = { days, hours, minutes, seconds };
       for (const [unit, value] of Object.entries(values)) {
-        const target = el.querySelector(`[data-unit="${unit}"]`);
-        if (target) target.textContent = String(value).padStart(2, "0");
+        const targetEl = el.querySelector(`[data-unit="${unit}"]`);
+        if (targetEl) targetEl.textContent = String(value).padStart(2, "0");
       }
     };
 

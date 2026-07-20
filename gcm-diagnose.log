@@ -1,0 +1,220 @@
+﻿Diagnose log at 2026-07-18T12:08:14Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.5.0+d34930736e131ad80e5690e5634ced1808aff3e2
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 19045)
+Reading environment variables... OK
+ Variables:
+HOMEPATH=\Users\Just PC
+DriverData=C:\Windows\System32\Drivers\DriverData
+COMPUTERNAME=DESKTOP-3NPKAIU
+MSYSTEM=MINGW64
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+WINDIR=C:\Windows
+LANG=en_US.UTF-8
+ChocolateyLastPathUpdate=133966785077742834
+PYTHON_BASIC_REPL=1
+ChocolateyToolsLocation=C:\tools
+ProgramFiles(x86)=C:\Program Files (x86)
+TMP=C:\Users\JUSTPC~1\AppData\Local\Temp
+CONFIG_SITE=C:/Program Files/Git/etc/config.site
+LC_CTYPE=en_US.UTF-8
+USERDOMAIN=DESKTOP-3NPKAIU
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+MSYSTEM_PREFIX=C:/Program Files/Git/mingw64
+USERNAME=Just PC
+MINGW_PREFIX=C:/Program Files/Git/mingw64
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+ACLOCAL_PATH=C:\Program Files\Git\mingw64\share\aclocal;C:\Program Files\Git\usr\share\aclocal
+TEMP=C:\Users\JUSTPC~1\AppData\Local\Temp
+LOCALAPPDATA=C:\Users\Just PC\AppData\Local
+MANPATH=C:\Program Files\Git\mingw64\local\man;C:\Program Files\Git\mingw64\share\man;C:\Program Files\Git\usr\local\man;C:\Program Files\Git\usr\share\man;C:\Program Files\Git\usr\man;C:\Program Files\Git\share\man
+OneDrive=C:\Users\Just PC\OneDrive
+COPILOT_DEBUG_NONCE=fd6e166d80e030e51144aea3aa053a05
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+MSYSTEM_CARCH=x86_64
+PROGRAMFILES=C:\Program Files (x86)
+VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+ProgramData=C:\ProgramData
+PYTHONSTARTUP=c:\Users\Just PC\AppData\Roaming\Code\User\workspaceStorage\aea42f98adf34840ad1cd9f40597bb17\ms-python.python\pythonrc.py
+TERM_PROGRAM_VERSION=1.129.1
+ORIGINAL_TMP=C:/Users/JUSTPC~1/AppData/Local/Temp
+PROCESSOR_REVISION=3c03
+SYSTEMROOT=C:\Windows
+TERM_PROGRAM=vscode
+PROCESSOR_LEVEL=6
+NUMBER_OF_PROCESSORS=4
+SSH_ASKPASS=C:/Program Files/Git/mingw64/bin/git-askpass.exe
+SHLVL=3
+APPDATA=C:\Users\Just PC\AppData\Roaming
+SYSTEMDRIVE=C:
+VSCODE_GIT_ASKPASS_MAIN=c:\Users\Just PC\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass-main.js
+PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+PUBLIC=C:\Users\Public
+VSCODE_GIT_IPC_HANDLE=\\.\pipe\vscode-git-caf54b2667-sock
+FPS_BROWSER_USER_PROFILE_STRING=Default
+PKG_CONFIG_PATH=C:\Program Files\Git\mingw64\lib\pkgconfig;C:\Program Files\Git\mingw64\share\pkgconfig
+MSYSTEM_CHOST=x86_64-w64-mingw32
+ORIGINAL_TEMP=C:/Users/JUSTPC~1/AppData/Local/Temp
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_14820_VKBDWDKPOHCNZYVR
+PLINK_PROTOCOL=ssh
+COLORTERM=truecolor
+MSYS=disable_pcon
+PATH=C:/Program Files/Git/mingw64/libexec/git-core;C:\Users\Just PC\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Just PC\bin;C:\Python313\Scripts;C:\Python313;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\ProgramData\ComposerSetup\bin;C:\xampp\php;C:\Program Files\dotnet;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\tools\Manim\Scripts;C:\tools\Codesnap;C:\Program Files\nodejs;C:\Users\Just PC\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Just PC\AppData\Local\Programs\Python\Python310;C:\Users\Just PC\AppData\Local\Programs\Python\Launcher;C:\Users\Just PC\AppData\Local\Microsoft\WindowsApps;C:\Users\Just PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Just PC\AppData\Roaming\Composer\vendor\bin;C:\Users\Just PC\.deno\bin;C:\Users\Just PC\AppData\Local\Muse Hub\lib;C:\Users\Just PC\AppData\Local\Programs\MiKTeX\miktex\bin\x64;C:\laragon\bin\php\php-8.4.12-nts-Win32-vs17-x64;C:\Users\Just PC\AppData\Local\Programs\Zed\bin;C:\tools\Codesnap;C:\Users\Just PC\.bun\bin;C:\Users\Just PC\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+ChocolateyInstall=C:\ProgramData\chocolatey
+GIT_TRACE2_PARENT_SID=0a489772-ca87-4c08-8647-0ecd2f6534d4
+PKG_CONFIG_SYSTEM_LIBRARY_PATH=C:/Program Files/Git/mingw64/lib
+ORIGINAL_PATH=C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Just PC\bin;C:\Python313\Scripts;C:\Python313;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\ProgramData\ComposerSetup\bin;C:\xampp\php;C:\Program Files\dotnet;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\tools\Manim\Scripts;C:\tools\Codesnap;C:\Program Files\nodejs;C:\Users\Just PC\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Just PC\AppData\Local\Programs\Python\Python310;C:\Users\Just PC\AppData\Local\Programs\Python\Launcher;C:\Users\Just PC\AppData\Local\Microsoft\WindowsApps;C:\Users\Just PC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Just PC\AppData\Roaming\Composer\vendor\bin;C:\Users\Just PC\.deno\bin;C:\Users\Just PC\AppData\Local\Muse Hub\lib;C:\Users\Just PC\AppData\Local\Programs\MiKTeX\miktex\bin\x64;C:\laragon\bin\php\php-8.4.12-nts-Win32-vs17-x64;C:\Users\Just PC\AppData\Local\Programs\Zed\bin;C:\tools\Codesnap;C:\Users\Just PC\.bun\bin;C:\Users\Just PC\AppData\Roaming\npm
+TMPDIR=C:\Users\JUSTPC~1\AppData\Local\Temp
+TERM=xterm
+__COMPAT_LAYER=RunAsInvoker
+SHELL=C:\Program Files\Git\usr\bin\bash.exe
+HOME=C:\Users\Just PC
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+COMSPEC=C:\Windows\system32\cmd.exe
+LOGONSERVER=\\DESKTOP-3NPKAIU
+USERPROFILE=C:\Users\Just PC
+DISPLAY=needs-to-be-defined
+COMMONPROGRAMFILES=C:\Program Files (x86)\Common Files
+VSCODE_GIT_ASKPASS_NODE=C:\Users\Just PC\AppData\Local\Programs\Microsoft VS Code\Code.exe
+_=C:/Program Files/Git/mingw64/bin/git
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-3NPKAIU
+PHP=C:\xampp\php
+CommonProgramW6432=C:\Program Files\Common Files
+HOMEDRIVE=C:
+INFOPATH=C:\Program Files\Git\mingw64\local\info;C:\Program Files\Git\mingw64\share\info;C:\Program Files\Git\usr\local\info;C:\Program Files\Git\usr\share\info;C:\Program Files\Git\usr\info;C:\Program Files\Git\share\info
+MINGW_PACKAGE_PREFIX=mingw-w64-x86_64
+SESSIONNAME=Console
+PWD=C:/Users/Just PC/Documents/Code/wedding-invitation
+EXEPATH=C:\Program Files\Git
+HOSTNAME=DESKTOP-3NPKAIU
+PROCESSOR_ARCHITEW6432=AMD64
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+PROCESSOR_ARCHITECTURE=x86
+PS1=\[]633;A\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[35m\]$MSYSTEM \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ \[]633;B\]
+OS=Windows_NT
+ProgramW6432=C:\Program Files
+MINGW_CHOST=x86_64-w64-mingw32
+PKG_CONFIG_SYSTEM_INCLUDE_PATH=C:/Program Files/Git/mingw64/include
+GIT_ASKPASS=c:\Users\Just PC\AppData\Roaming\Code\User\globalStorage\vscode.git\askpass\70789581cae28aa7\askpass.sh
+ALLUSERSPROFILE=C:\ProgramData
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\Just PC\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\Just PC\AppData\Local\Temp\8f22428a9ad9c14b03e561f7'... OK
+Reading from temporary file 'C:\Users\Just PC\AppData\Local\Temp\8f22428a9ad9c14b03e561f7'... OK
+Deleting temporary file 'C:\Users\Just PC\AppData\Local\Temp\8f22428a9ad9c14b03e561f7'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\Just PC
+UserDataDirectoryPath: C:\Users\Just PC\.gcm
+GetCurrentDirectory(): C:\Users\Just PC\Documents\Code\wedding-invitation
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com...Sending HEAD request to https://example.com... OK
+ OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:61729/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.45.0.windows.1'
+Locating current repository...Git repository at 'C:/Users/Just PC/Documents/Code/wedding-invitation/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=openssl
+file:C:/Program Files/Git/etc/gitconfig	http.sslcainfo=C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/Just PC/.gitconfig	user.email=thecrowdel@gmail.com
+file:C:/Users/Just PC/.gitconfig	user.name=paresiqbal
+file:C:/Users/Just PC/.gitconfig	safe.directory=C:/Users/Just PC/Documents/Code/attin-exam
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/paresiqbal/pahreza-risti-wedding-invitation.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\Just PC\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\Just PC\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

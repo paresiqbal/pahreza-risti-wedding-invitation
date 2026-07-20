@@ -4,8 +4,11 @@ import GoldOrnament from "./GoldOrnament.astro";
 
 const { events } = wedding;
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("id-ID", {
+function formatDate(input: string) {
+  const [day, month, year] = input.split("-").map(Number);
+  const parsedDate = new Date(year, month - 1, day);
+
+  return parsedDate.toLocaleDateString("id-ID", {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -16,32 +19,48 @@ function formatDate(iso: string) {
 
 <section class="bg-sand px-6 py-24">
   <div class="mx-auto max-w-3xl text-center">
-    <p data-reveal="fade" class="font-display text-xs tracking-[0.35em] text-gold uppercase">Acara</p>
+    <p
+      data-reveal="fade"
+      class="font-display text-xs tracking-[0.35em] text-gold uppercase"
+    >
+      Acara
+    </p>
     <div data-reveal="fade" class="divider-gold mx-auto mt-4 w-40">
       <GoldOrnament variant="mark" class="h-3 w-12 shrink-0 text-gold" />
     </div>
 
     <div data-reveal-group class="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2">
-      {events.map((event) => (
-        <div data-reveal="fade" class="border border-gold/40 bg-ivory px-6 py-10">
-          <h3 class="font-display text-xl text-onyx">{event.label}</h3>
-          <p class="mt-3 text-sm text-onyx-soft/80">{formatDate(event.date)}</p>
-          <p class="mt-1 text-sm text-onyx-soft/80">
-            {event.startTime} – {event.endTime} {event.timezone}
-          </p>
-          <p class="font-display mt-4 text-base text-onyx">{event.venueName}</p>
-          <p class="mt-1 text-xs leading-relaxed text-onyx-soft/60">{event.venueAddress}</p>
-
-          <a
-            href={event.mapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-6 inline-block border border-gold px-6 py-2 text-xs tracking-[0.25em] text-gold-deep uppercase transition-colors hover:bg-gold hover:text-ivory"
+      {
+        events.map((event) => (
+          <div
+            data-reveal="fade"
+            class="border border-gold/40 bg-ivory px-6 py-10"
           >
-            Lihat Lokasi
-          </a>
-        </div>
-      ))}
+            <h3 class="font-display text-xl text-onyx">{event.label}</h3>
+            <p class="mt-3 text-sm text-onyx-soft/80">
+              {formatDate(event.date)}
+            </p>
+            <p class="mt-1 text-sm text-onyx-soft/80">
+              {event.startTime} – {event.endTime} {event.timezone}
+            </p>
+            <p class="font-display mt-4 text-base text-onyx">
+              {event.venueName}
+            </p>
+            <p class="mt-1 text-xs leading-relaxed text-onyx-soft/60">
+              {event.venueAddress}
+            </p>
+
+            <a
+              href={event.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 inline-block border border-gold px-6 py-2 text-xs tracking-[0.25em] text-gold-deep uppercase transition-colors hover:bg-gold hover:text-ivory"
+            >
+              Lihat Lokasi
+            </a>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

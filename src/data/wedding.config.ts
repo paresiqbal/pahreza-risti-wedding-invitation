@@ -6,6 +6,13 @@
 
 import groomPhoto from "../assets/paheza.jpeg";
 import bridePhoto from "../assets/risti.jpeg";
+import atmCard from "../assets/atm.png";
+import gallery1 from "../assets/1.jpeg";
+import gallery2 from "../assets/2.jpeg";
+import gallery3 from "../assets/3.jpeg";
+import gallery4 from "../assets/4.jpeg";
+import gallery5 from "../assets/5.jpeg";
+import gallery6 from "../assets/6.jpeg";
 
 export type EventDetail = {
   label: string; // e.g. "Akad Nikah" or "Resepsi"
@@ -36,21 +43,21 @@ export const wedding = {
   seo: {
     title: "Undangan Pernikahan — Pahreza & Risti",
     description:
-      "Dengan penuh sukacita, kami mengundang Anda untuk merayakan hari bahagia pernikahan Pahreza& Risti.",
+      "Dengan penuh sukacita, kami mengundang Anda untuk merayakan hari bahagia pernikahan Pahreza & Risti.",
     ogImage: "/og-image.jpg",
   },
 
   // The couple
   groom: {
     fullName: "Pahreza Iqbal Prastowo S.Kom",
-    nickname: "Pahreza",
+    nickname: "Pahreza Iqbal",
     parents: "Putra dari Bapak Budi Yanto & Sumiatun",
     instagram: "@pares_iqbal",
     photo: groomPhoto.src,
   },
   bride: {
     fullName: "Risti Yolanda S.Pd",
-    nickname: "Risti",
+    nickname: "Risti Yolanda",
     parents: "Putri dari Bapak A. Sikin & Ibu Linda Haryanti",
     instagram: "@ristiylnd",
     photo: bridePhoto.src,
@@ -67,7 +74,7 @@ export const wedding = {
   events: [
     {
       label: "Akad Nikah",
-      date: "25-06-2026",
+      date: "25-05-2026",
       startTime: "08:00",
       endTime: "16:00",
       timezone: "WIB",
@@ -112,12 +119,12 @@ export const wedding = {
   ] satisfies LoveStoryMoment[],
 
   gallery: [
-    "/images/gallery-1.jpg",
-    "/images/gallery-2.jpg",
-    "/images/gallery-3.jpg",
-    "/images/gallery-4.jpg",
-    "/images/gallery-5.jpg",
-    "/images/gallery-6.jpg",
+    gallery1.src,
+    gallery2.src,
+    gallery3.src,
+    gallery4.src,
+    gallery5.src,
+    gallery6.src,
   ],
 
   // Digital angpau / kado
@@ -129,19 +136,13 @@ export const wedding = {
         bankName: "BRI",
         accountNumber: "1234567890",
         accountHolder: "Pahreza Iqbal Prastowo",
-        cardImage: "/images/card-bca.jpg",
-      },
-      {
-        bankName: "BRI",
-        accountNumber: "0987654321",
-        accountHolder: "Kirana Ayu Lestari",
-        cardImage: "/images/card-mandiri.jpg",
+        cardImage: atmCard.src,
       },
     ] satisfies GiftAccount[],
     address: {
       show: true,
-      recipientName: "Andhika & Kirana",
-      fullAddress: "Jl. Melati No. 12, Kebayoran Baru, Jakarta Selatan, 12180",
+      recipientName: "Pahreza & Risti",
+      fullAddress: "Jl. Stadion, Air Bang, Curup Tengah, Rejang Lebong",
     },
   },
 
