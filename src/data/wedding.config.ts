@@ -135,7 +135,7 @@ export const wedding = {
     accounts: [
       {
         bankName: "BRI",
-        accountNumber: "1234567890",
+        accountNumber: "6013014298702971",
         accountHolder: "Pahreza Iqbal Prastowo",
         cardImage: atmCard.src,
       },

@@ -18,7 +18,7 @@ function parseDate(input: string) {
   return new Date(input);
 }
 
-const weddingDate = parseDate(wedding.events[0].date);
+const weddingDate = new Date(2026, 7, 2);
 const formattedDate = weddingDate.toLocaleDateString("id-ID", {
   day: "numeric",
   month: "long",
